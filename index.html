@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Chosen Palette: Warm Neutrals & Professional Blue -->
     <!-- 
        Background: #F9FAFB (Gray 50) - Warm neutral base
@@ -44,34 +45,41 @@
             height: 300px;
             max-height: 400px;
         }
+
         @media (min-width: 768px) {
             .chart-container {
                 height: 350px;
             }
         }
+
         .timeline-node {
             transition: all 0.3s ease;
         }
-        .timeline-node:hover, .timeline-node.active {
+
+        .timeline-node:hover,
+        .timeline-node.active {
             transform: scale(1.1);
             border-color: #3B82F6;
             background-color: #EFF6FF;
         }
+
         .project-card {
             transition: transform 0.2s;
         }
+
         .project-card:hover {
             transform: translateY(-5px);
         }
     </style>
 </head>
+
 <body class="bg-warm text-primary font-sans antialiased selection:bg-accent selection:text-white">
 
     <!-- Application Structure Plan: 
          1. Header/Hero: Immediate identity and contact info.
          2. Analytical Dashboard: Visualizes the 'Full Stack' nature (Radar Chart) and Domain Experience (Doughnut Chart) to give a high-level overview before diving into text.
-         3. Interactive Timeline: The core navigation. Users select a role to update the "Deep Dive" section. This prevents cognitive overload from a wall of text.
-         4. Deep Dive Section: Displays the specific content for the selected role. For Gartner, this includes a sub-interactive section for specific projects (Capterra, Portals).
+         3. Interactive Timeline: The core navigation. Users select a Company/Role to update the "Deep Dive" section. 
+         4. Deep Dive Section: Displays the specific content for the selected tenure. ALL entries now use the consistent "Project Card" layout for their specific applications/projects.
          5. Skills & Education: Supporting reference data.
     -->
 
@@ -87,7 +95,8 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white text-xl font-bold">
+                <div
+                    class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white text-xl font-bold">
                     XC
                 </div>
                 <div>
@@ -99,7 +108,8 @@
                 <a href="#dashboard" class="hover:text-accent transition">Overview</a>
                 <a href="#experience" class="hover:text-accent transition">Experience</a>
                 <a href="#skills" class="hover:text-accent transition">Skills</a>
-                <button onclick="window.print()" class="text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition">
+                <button onclick="window.print()"
+                    class="text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition">
                     <i class="fas fa-file-pdf mr-1"></i> Save PDF
                 </button>
             </div>
@@ -112,12 +122,15 @@
         <section class="text-center max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold mb-4">Professional Profile</h2>
             <p class="text-lg text-secondary leading-relaxed">
-                Senior Software Engineer specializing in <span class="text-accent font-semibold">React, Node.js, and TypeScript</span>. 
-                I focus on building scalable SaaS solutions and integrating AI-driven features into high-traffic platforms like Capterra.
+                Senior Software Engineer specializing in <span class="text-accent font-semibold">React, Node.js, and
+                    TypeScript</span>.
+                I focus on building scalable SaaS solutions and integrating AI-driven features into high-traffic
+                platforms like Capterra.
                 Explore my interactive career history below to see how I drive technical initiatives and business value.
             </p>
             <div class="mt-6 flex justify-center space-x-6 text-2xl text-secondary">
-                <a href="mailto:xcariza@gmail.com" class="hover:text-accent" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:xcariza@gmail.com" class="hover:text-accent" title="Email"><i
+                        class="fas fa-envelope"></i></a>
                 <a href="tel:+34669606262" class="hover:text-accent" title="Phone"><i class="fas fa-phone"></i></a>
                 <span class="text-sm self-center font-mono">Sant Cugat del Vallès, Barcelona</span>
             </div>
@@ -127,15 +140,15 @@
         <section id="dashboard" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
             <div class="mb-6 border-b pb-4">
                 <h3 class="text-xl font-bold flex items-center">
-                    <i class="fas fa-chart-pie text-accent mr-3"></i> 
+                    <i class="fas fa-chart-pie text-accent mr-3"></i>
                     Technical & Industry Overview
                 </h3>
                 <p class="text-gray-500 text-sm mt-1">
-                    Visualizing the distribution of my expertise across domains and technical competencies. 
+                    Visualizing the distribution of my expertise across domains and technical competencies.
                     These charts aggregate data from over 8 years of professional experience.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <!-- Chart 1: Skill Radar -->
                 <div class="flex flex-col items-center">
@@ -159,14 +172,15 @@
 
         <!-- Interactive Experience Section -->
         <section id="experience" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
+
             <!-- Left Column: Timeline Navigation -->
             <div class="lg:col-span-4 bg-white rounded-xl shadow-lg p-6 h-fit">
                 <h3 class="text-xl font-bold mb-6 flex items-center">
                     <i class="fas fa-briefcase text-accent mr-3"></i> Career Timeline
                 </h3>
-                <p class="text-sm text-gray-500 mb-6">Click on a role to view detailed project contributions and tech stacks.</p>
-                
+                <p class="text-sm text-gray-500 mb-6">Click on a company to view the key projects developed during that
+                    tenure.</p>
+
                 <div class="relative border-l-2 border-gray-200 ml-3 space-y-8" id="timeline-container">
                     <!-- Javascript populates this -->
                 </div>
@@ -193,34 +207,49 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Frontend -->
                 <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-                    <h4 class="text-accent font-bold mb-4 border-b border-gray-700 pb-2"><i class="fab fa-react mr-2"></i> Frontend</h4>
+                    <h4 class="text-accent font-bold mb-4 border-b border-gray-700 pb-2"><i
+                            class="fab fa-react mr-2"></i> Frontend</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> React JS & Next.js</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> TypeScript</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> HTML5 / CSS3 / SASS</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> React Testing Library</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> React
+                            JS & Next.js</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                            TypeScript</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> HTML5
+                            / CSS3 / SASS</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> React
+                            Testing Library</li>
                     </ul>
                 </div>
 
                 <!-- Backend & DB -->
                 <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-                    <h4 class="text-accent font-bold mb-4 border-b border-gray-700 pb-2"><i class="fas fa-server mr-2"></i> Backend & Data</h4>
+                    <h4 class="text-accent font-bold mb-4 border-b border-gray-700 pb-2"><i
+                            class="fas fa-server mr-2"></i> Backend & Data</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span> Node.js & Express</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span> Prisma ORM</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span> PostgreSQL & MongoDB</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span> ElasticSearch</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                            Node.js & Express</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span> Prisma
+                            ORM</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                            PostgreSQL & MongoDB</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                            ElasticSearch</li>
                     </ul>
                 </div>
 
                 <!-- Infrastructure & AI -->
                 <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-                    <h4 class="text-accent font-bold mb-4 border-b border-gray-700 pb-2"><i class="fas fa-microchip mr-2"></i> Infra & Innovation</h4>
+                    <h4 class="text-accent font-bold mb-4 border-b border-gray-700 pb-2"><i
+                            class="fas fa-microchip mr-2"></i> Infra & Innovation</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span> Docker</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span> AI/LLM Integration</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span> Git & Jira</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span> SaaS Architecture</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+                            Docker</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+                            AI/LLM Integration</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span> Git
+                            & Jira</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span> SaaS
+                            Architecture</li>
                     </ul>
                 </div>
             </div>
@@ -302,62 +331,79 @@
                     period: "2021 - Present",
                     location: "Arad, Romania (Remote)",
                     summary: "Co-leading technical strategy and full-stack implementation for a services marketplace.",
-                    bullets: [
-                        "Implemented entire front-end and back-end with Next.js, Express.js, and Prisma.",
-                        "Created seamless UX for service requests.",
-                        "Engineered relational data models for efficient storage.",
-                        "Configured Docker environments for Dev/Prod."
+                    projects: [
+                        {
+                            name: "Fixbee Platform",
+                            icon: "fa-handshake",
+                            desc: "Services marketplace for users and specialists.",
+                            details: [
+                                "Implemented entire front-end and back-end with Next.js, Express.js, and Prisma.",
+                                "Created seamless UX for service requests.",
+                                "Engineered relational data models for efficient storage.",
+                                "Configured Docker environments for Dev/Prod."
+                            ]
+                        }
                     ],
                     tech: ["Next.js", "Express", "Prisma", "Docker", "PostgreSQL"]
                 },
                 {
-                    id: "healthone",
-                    company: "HealthOne NOVA (Cegedim)",
+                    id: "cegedim",
+                    company: "Cegedim S.L",
                     title: "Front-end Tech Lead",
                     period: "2020 - 2021",
                     location: "Barcelona, Spain",
-                    summary: "Led frontend development for a SaaS Healthcare solution for the Belgian market.",
-                    bullets: [
-                        "Implemented SaaS solution for healthcare professionals.",
-                        "Ensured scalable, maintainable, high-quality code.",
-                        "Established best practices and conducted code reviews.",
-                        "Mentored team members."
+                    summary: "Led frontend development for SaaS Healthcare solutions in the Belgian market.",
+                    projects: [
+                        {
+                            name: "HealthOne NOVA",
+                            icon: "fa-heart-pulse",
+                            desc: "SaaS solution for Belgian Health Care professionals.",
+                            details: [
+                                "Implemented SaaS solution using React JS and Typescript.",
+                                "Ensured scalable, maintainable, and high-quality code.",
+                                "Established best practices and conducted code reviews.",
+                                "Mentored team members and managed PRs."
+                            ]
+                        }
                     ],
                     tech: ["React JS", "TypeScript", "SaaS", "Team Leadership"]
                 },
                 {
-                    id: "dataflowapi",
-                    company: "Dataflow API (Cegedim)",
-                    title: "Senior Front-end Developer",
-                    period: "2018 - 2020",
-                    location: "Barcelona, Spain",
-                    summary: "Developed dynamic API service creation tools for partners.",
-                    bullets: [
-                        "Implemented React/TypeScript application for dynamic REST API Services.",
-                        "Empowered partners to create and manage custom APIs.",
-                        "Linked APIs to custom business logic."
-                    ],
-                    tech: ["React JS", "TypeScript", "REST API", "Dynamic UI"]
-                },
-                {
-                    id: "dataflowui",
-                    company: "Dataflow UI (Stacks)",
+                    id: "stacks",
+                    company: "Stacks S.L",
                     title: "Senior Full-stack Developer",
-                    period: "2015 - 2018",
+                    period: "2015 - 2020",
                     location: "Barcelona, Spain",
-                    summary: "Built a RAD framework for healthcare organizations.",
-                    bullets: [
-                        "Built Rapid Application Development (RAD) configuration framework.",
-                        "Utilized JavaServer Faces for widget-based interfaces.",
-                        "Enabled easy data editing and visualization."
+                    summary: "Built RAD frameworks and dynamic API services for healthcare organizations.",
+                    projects: [
+                        {
+                            name: "Dataflow API",
+                            icon: "fa-network-wired",
+                            desc: "Dynamic REST API Service creator.",
+                            details: [
+                                "Implemented React/TypeScript application for dynamic REST API Services.",
+                                "Empowered partners to create and manage custom APIs.",
+                                "Linked APIs to custom business logic to save development time."
+                            ]
+                        },
+                        {
+                            name: "Dataflow UI",
+                            icon: "fa-layer-group",
+                            desc: "RAD configuration framework for Healthcare.",
+                            details: [
+                                "Built Rapid Application Development (RAD) configuration framework.",
+                                "Utilized JavaServer Faces for widget-based interfaces.",
+                                "Enabled easy data editing and visualization through built-in widgets."
+                            ]
+                        }
                     ],
-                    tech: ["JavaServer Faces", "Full-stack", "Healthcare IT"]
+                    tech: ["React JS", "TypeScript", "JavaServer Faces", "REST API", "Full-stack"]
                 }
             ]
         };
 
         // --- STATE ---
-        const state = {
+        let state = {
             selectedRole: 0 // Default to first role (Gartner)
         };
 
@@ -435,7 +481,7 @@
                 const node = document.createElement('div');
                 node.className = `timeline-node mb-8 ml-6 cursor-pointer group`;
                 node.onclick = () => selectRole(index);
-                
+
                 // Active indicator
                 const indicator = `
                     <span class="absolute flex items-center justify-center w-6 h-6 bg-white rounded-full -left-3 ring-8 ring-white">
@@ -457,7 +503,7 @@
 
         function selectRole(index) {
             state.selectedRole = index;
-            
+
             // Update UI styles for timeline
             cvData.roles.forEach((_, i) => {
                 const indicator = document.getElementById(`indicator-${i}`);
@@ -480,54 +526,34 @@
 
         function renderDetailView(role) {
             const container = document.getElementById('detail-view');
-            
+
             // Tech stack tags
             const tags = role.tech.map(t => `<span class="inline-block bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full mr-2 mb-2 font-medium border border-gray-200">${t}</span>`).join('');
 
-            // Content Logic: Gartner has 'projects', others have 'bullets'
-            let contentHtml = '';
-            
-            if (role.projects) {
-                // Special layout for Gartner
-                const projectsHtml = role.projects.map(p => `
-                    <div class="project-card bg-warm p-4 rounded-lg border border-gray-100 shadow-sm">
-                        <div class="flex items-start mb-3">
-                            <div class="bg-blue-100 text-accent p-2 rounded-lg mr-3">
-                                <i class="fas ${p.icon}"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-gray-900">${p.name}</h5>
-                                <p class="text-xs text-gray-500">${p.desc}</p>
-                            </div>
+            // Render projects with consistent Card Design
+            const projectsHtml = role.projects.map(p => `
+                <div class="project-card bg-warm p-4 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-start mb-3">
+                        <div class="bg-blue-100 text-accent p-2 rounded-lg mr-3 shadow-sm">
+                            <i class="fas ${p.icon}"></i>
                         </div>
-                        <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                            ${p.details.map(d => `<li>${d}</li>`).join('')}
-                        </ul>
+                        <div>
+                            <h5 class="font-bold text-gray-900">${p.name}</h5>
+                            <p class="text-xs text-gray-500">${p.desc}</p>
+                        </div>
                     </div>
-                `).join('');
+                    <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                        ${p.details.map(d => `<li>${d}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
 
-                contentHtml = `
-                    <div class="grid grid-cols-1 gap-4 mt-6">
-                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Key Projects</h4>
-                        ${projectsHtml}
-                    </div>
-                `;
-            } else {
-                // Standard layout for others
-                contentHtml = `
-                    <div class="mt-6">
-                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Responsibilities & Achievements</h4>
-                        <ul class="space-y-3">
-                            ${role.bullets.map(b => `
-                                <li class="flex items-start text-gray-700">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                                    <span>${b}</span>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `;
-            }
+            const contentHtml = `
+                <div class="grid grid-cols-1 gap-4 mt-6">
+                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Key Projects & Applications</h4>
+                    ${projectsHtml}
+                </div>
+            `;
 
             // Animate entrance
             container.style.opacity = '0';
@@ -565,4 +591,5 @@
 
     </script>
 </body>
+
 </html>
